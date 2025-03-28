@@ -1,0 +1,15 @@
+# Node.js (Frontend)
+node_modules/
+dist/
+
+# Laravel (Backend)
+vendor/
+.env
+storage/
+bootstrap/cache/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
