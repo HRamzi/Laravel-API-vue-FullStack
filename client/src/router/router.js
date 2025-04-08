@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { useUserStore } from "../stores/userStore";
 import DefaultLayout from '../components/DefaultLayout.vue';
 import Home from '../pages/Home.vue';
 import MyImages from '../pages/MyImages.vue';
@@ -13,7 +14,16 @@ const routes = [
         children: [
             { path: '/', name: 'Home', component: Home },
             { path: '/images', name: 'MyImages', component: MyImages },
-        ]
+        ],
+        beforeEnter: async (to, from, next) => {
+            try {
+                const userStore = useUserStore();
+                await userStore.getUser();
+                next();
+            } catch (error) {
+                next({name: 'login'});
+            }
+        },
     },
     {
         path: '/login',

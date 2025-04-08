@@ -20,7 +20,7 @@ async function login() {
 
     try {
         await authStore.login(data.value)
-        await userStore.getUser() // Fetch authenticated user
+        await userStore.getUser()
         router.push({ name: 'Home' })
     } catch (error) {
         if (error.response?.status === 401) {
@@ -39,7 +39,7 @@ async function login() {
         <h2 class="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <form @submit.prevent="login">
-                <div v-if="errors.general" class="text-sm text-red-600 mb-3">{{ errors.general }}</div>
+                <div v-if="errors.general" class="mt-4 py-2 px-3 rounded text-white bg-red-400">{{ errors.general }}</div>
 
                 <!-- Email -->
                 <div>
@@ -48,7 +48,7 @@ async function login() {
                         <input type="email" v-model="data.email" id="email" required
                             class="block w-full rounded-md border px-3 py-1.5 text-gray-900 placeholder-gray-400 focus:outline-indigo-600" />
                     </div>
-                    <div v-if="errors.email" class="text-sm text-red-600 mt-1">{{ errors.email[0] }}</div>
+                    <div v-if="errors.email" class="mt-4 py-2 px-3 rounded text-white bg-red-400">{{ errors.email[0] }}</div>
                 </div>
 
                 <!-- Password -->
@@ -58,7 +58,7 @@ async function login() {
                         <input type="password" v-model="data.password" id="password" required
                             class="block w-full rounded-md border px-3 py-1.5 text-gray-900 placeholder-gray-400 focus:outline-indigo-600" />
                     </div>
-                    <div v-if="errors.password" class="text-sm text-red-600 mt-1">{{ errors.password[0] }}</div>
+                    <div v-if="errors.password" class="mt-4 py-2 px-3 rounded text-white bg-red-400">{{ errors.password[0] }}</div>
                 </div>
 
                 <!-- Submit -->

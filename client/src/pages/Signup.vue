@@ -46,7 +46,7 @@ async function register() {
                         <input type="text" v-model="data.name" id="name" required
                             class="block w-full rounded-md border px-3 py-1.5 text-gray-900 placeholder-gray-400 focus:outline-indigo-600" />
                     </div>
-                    <div v-if="errors.name" class="text-sm text-red-600 mt-1">{{ errors.name[0] }}</div>
+                    <div v-if="errors.name" class="mt-4 py-2 px-3 rounded text-white bg-red-400">{{ errors.name[0] }}</div>
                 </div>
 
                 <!-- Email -->
@@ -56,7 +56,7 @@ async function register() {
                         <input type="email" v-model="data.email" id="email" required
                             class="block w-full rounded-md border px-3 py-1.5 text-gray-900 placeholder-gray-400 focus:outline-indigo-600" />
                     </div>
-                    <div v-if="errors.email" class="text-sm text-red-600 mt-1">{{ errors.email[0] }}</div>
+                    <div v-if="errors.email" class="mt-4 py-2 px-3 rounded text-white bg-red-400">{{ errors.email[0] }}</div>
                 </div>
 
                 <!-- Password -->
@@ -66,7 +66,7 @@ async function register() {
                         <input type="password" v-model="data.password" id="password" required
                             class="block w-full rounded-md border px-3 py-1.5 text-gray-900 placeholder-gray-400 focus:outline-indigo-600" />
                     </div>
-                    <div v-if="errors.password" class="text-sm text-red-600 mt-1">{{ errors.password[0] }}</div>
+                    <div v-if="errors.password" class="mt-4 py-2 px-3 rounded text-white bg-red-400">{{ errors.password[0] }}</div>
                 </div>
 
                 <!-- Confirm Password -->
@@ -77,7 +77,7 @@ async function register() {
                         <input type="password" v-model="data.password_confirmation" id="password_confirmation" required
                             class="block w-full rounded-md border px-3 py-1.5 text-gray-900 placeholder-gray-400 focus:outline-indigo-600" />
                     </div>
-                    <div v-if="errors.password_confirmation" class="text-sm text-red-600 mt-1">{{
+                    <div v-if="errors.password_confirmation" class="mt-4 py-2 px-3 rounded text-white bg-red-400">{{
                         errors.password_confirmation[0] }}</div>
                 </div>
 
