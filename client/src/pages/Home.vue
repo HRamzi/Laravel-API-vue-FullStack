@@ -2,7 +2,6 @@
 import { PhotoIcon } from '@heroicons/vue/24/solid'
 import { ref } from "vue";
 import {useImageStore} from '../stores/imageStore'
-import axiosClient from "../services/axios.js";
 import router from "../router/router.js";
 
 const imageStore = useImageStore()

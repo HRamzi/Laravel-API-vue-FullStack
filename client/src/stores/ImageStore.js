@@ -10,7 +10,7 @@ export const useImageStore = defineStore("imageStore", {
         async fetchImages() {
             this.loading = true;
             try {
-                const response = await axiosClient.get("/images");
+                const response = await axiosClient.get("api/images");
                 this.images = response.data;
             } catch (error) {
                 console.error("Failed to fetch images:", error);

@@ -14,17 +14,20 @@ class ImageController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return Image::latest()
-            ->get()
-            ->map(function ($image) {
-                return [
-                    'id' => $image->id,
-                    'url' => url(Storage::url($image->path)),
-                    'label' => $image->label,
-                ];
-            });
-    }
+{
+    $user = Auth::user();
+
+    return Image::where('user_id', $user->id)
+        ->latest()
+        ->get()
+        ->map(function ($image) {
+            return [
+                'id' => $image->id,
+                'url' => url(Storage::url($image->url)),
+                'label' => $image->label,
+            ];
+        });
+}
 
     /**
      * Store a newly created resource in storage.
