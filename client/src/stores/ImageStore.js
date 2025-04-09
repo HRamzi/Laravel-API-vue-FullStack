@@ -33,7 +33,7 @@ export const useImageStore = defineStore("imageStore", {
 
         async deleteImage(id) {
             try {
-                await axiosClient.delete(`/images/${id}`);
+                await axiosClient.delete(`api/images/${id}`);
                 this.images = this.images.filter((img) => img.id !== id);
             } catch (error) {
                 console.error("Delete failed:", error);
