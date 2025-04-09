@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, computed } from 'vue'
-import { useImageStore } from '../stores/imageStore'
+import { useImageStore } from '../stores/ImageStore'
 
 const imageStore = useImageStore()
 

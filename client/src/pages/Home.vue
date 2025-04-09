@@ -1,7 +1,7 @@
 <script setup>
 import { PhotoIcon } from '@heroicons/vue/24/solid'
 import { ref } from "vue";
-import {useImageStore} from '../stores/imageStore'
+import {useImageStore} from '../stores/ImageStore'
 import router from "../router/router.js";
 
 const imageStore = useImageStore()
